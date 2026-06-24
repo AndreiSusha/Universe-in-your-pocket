@@ -1,71 +1,84 @@
-# Tailwind Dashboard
+# Universe in your pocket
 
-A responsive analytics dashboard for a B2B SaaS-style admin panel, built with React and Tailwind CSS. It brings together KPI cards, interactive charts, data tables, and animated page transitions across a multi-page layout — a frontend portfolio piece focused on data visualisation and clean component architecture.
+Welcome to the "Universe in your pocket" project! This website provides users with information about space, astronomy, and space missions. Various sections are available to explore space and delve into its mysterious depths.
 
-## Features
+It's a full-stack application: a React frontend backed by a Node.js / Express REST API with MongoDB, featuring user registration, a community blog, and an admin panel.
 
-- **Multi-page layout** with sidebar navigation and client-side routing (React Router) — Dashboard, Products, Customers, Analytics, Feedback, Profile, and Support pages
-- **KPI cards** summarising key metrics (customer happiness, MRR, conversions, churn)
-- **Interactive charts** built with Recharts — line, bar, area, and pie visualisations for sales, revenue, client activity, and demographics
-- **Data tables** for customers and products
-- **Animated transitions** using Framer Motion for a polished feel
-- **Responsive design** — adapts from mobile to desktop with Tailwind's utility classes
-- **Profile settings** section with notification, security, and account-management UI
+## About the Project
+
+The project includes the following main components:
+
+### Home Page
+A brief description of the project, plus the latest news from the world of astronomy.
+
+### Articles and News
+Read interesting articles and the latest news about space, astronomy, and space missions.
+
+### Space Blog
+A blog section where registered users can share their thoughts, articles, and photos about space.
+
+### Registration and Authorization
+Create an account to publish your own materials for other participants. Authentication is handled with JWT.
+
+### Administrator Panel
+A control panel allowing administrators to add, edit, and delete articles, and to update information about space events and missions.
 
 ## Tech stack
 
-| Layer        | Choice                              |
-| ------------ | ----------------------------------- |
-| Framework    | React 18                            |
-| Build tool   | Vite                                |
-| Styling      | Tailwind CSS                        |
-| Charts       | Recharts                            |
-| Animation    | Framer Motion                       |
-| Routing      | React Router                        |
-| Icons        | Lucide React, React Icons           |
-
-## Getting started
-
-Prerequisites: **Node.js 18+** and npm.
-
-```bash
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
-```
-
-The app runs at `http://localhost:5173` by default.
-
-### Other scripts
-
-```bash
-npm run build     # production build
-npm run preview   # preview the production build locally
-npm run lint      # run ESLint
-```
+- **React** — JavaScript library for building the user interface
+- **Node.js / Express** — web framework handling HTTP requests and routing
+- **MongoDB / Mongoose** — NoSQL database and object modeling for data storage and validation
+- **JWT** — authentication and authorization
+- **bcrypt** — password hashing
+- **Multer** — handling image/file uploads
+- **HTML / CSS**
 
 ## Project structure
 
 ```
-src/
-├── App.jsx                 # routes and layout shell
-├── pages/                  # one component per route
-│   ├── HomePage.jsx        # main dashboard with KPI cards and charts
-│   ├── ProductsPage.jsx
-│   ├── CustomersPage.jsx
-│   ├── AnalyticsPage.jsx
-│   ├── FeedbackPage.jsx
-│   ├── ProfilePage.jsx
-│   └── SupportPage.jsx
-└── components/
-    ├── global/             # Sidebar, Header, shared KPI card
-    ├── charts/             # Recharts visualisations
-    ├── tables/             # customer and product tables
-    └── profile/            # profile settings UI
+.
+├── server/                   # Node.js / Express REST API + MongoDB models
+└── universe-in-your-pocket/  # React frontend
 ```
 
-## Notes
+## Getting started
 
-The dashboard uses static sample data to focus on the frontend: layout, charting, responsiveness, and component structure. It's designed as a showcase of building a data-rich admin interface with a modern React toolchain.
+Prerequisites: **Node.js**, **npm**, and a **MongoDB** connection string.
+
+### Backend
+
+```bash
+cd server
+npm install
+
+# Create a .env file based on the variables below, then:
+npm run dev        # runs on http://localhost:3000
+```
+
+Environment variables (`server/.env`):
+
+```
+PORT=3000
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=blog
+CLUSTER=your_cluster
+```
+
+### Frontend
+
+```bash
+cd universe-in-your-pocket
+npm install
+npm start          # runs on http://localhost:3001
+```
+
+## Accessibility
+
+The project includes several accessibility enhancements: a high-contrast mode for improved visibility, and keyboard navigation for users who rely on alternative input methods.
+
+## Contributors
+
+- [Evgeny Gumenyuk](https://github.com/armelant)
+- [Andrei Susha](https://github.com/AndreiSusha)
+- [Beresnev Timofei](https://github.com/Timo-joinllur)
